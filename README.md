@@ -4,13 +4,6 @@ A custom C++-lexer for [Pygments](http://pygments.org/), for extra keyword highl
 
 ## Install
 
-### Using PyPI and pip
-
-    $ (sudo) pip install pygments-mdcpp
-
-
-### Manual
-
     $ git clone https://github.com/FSund/pygments-custom-cpplexer.git
     $ cd pygments-custom-cpplexer
     $ (sudo) python setup.py install
