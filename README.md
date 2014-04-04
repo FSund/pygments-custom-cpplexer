@@ -15,6 +15,12 @@ A custom C++-lexer for [Pygments](http://pygments.org/), for extra keyword highl
     $ cd pygments-custom-cpplexer
     $ (sudo) python setup.py install
 
+### Verify
+
+Verify that the package installed correctly by looking for the lexer "mdcpp" in the output of
+
+    $ pygmentize -L lexers
+
 ## Using the lexer in latex
 
 Just use the **mdcpp** "language". In LaTeX this means something like this
