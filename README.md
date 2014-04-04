@@ -1,6 +1,6 @@
 # pygments-custom-cpplexer
 
-A custom C++-lexer for Pygments, for my master thesis. Adds some extra keywords like *Atom*, *System* and *vec3*.
+A custom C++-lexer for [Pygments](http://pygments.org/), for extra keyword highlighting when using the package [minted](https://github.com/gpoore/minted) in LaTeX. Adds some extra keywords like *Atom*, *System* and *vec3*.
 
 ## Install
 
