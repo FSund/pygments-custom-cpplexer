@@ -4,23 +4,30 @@ A custom C++-lexer for [Pygments](http://pygments.org/), for extra keyword highl
 
 ## Install
 
-    $ git clone https://github.com/FSund/pygments-custom-cpplexer.git
-    $ cd pygments-custom-cpplexer
-    $ (sudo) python setup.py install
+    git clone https://github.com/FSund/pygments-custom-cpplexer.git
+    cd pygments-custom-cpplexer
+    (sudo) python setup.py install
 
 ### Verify
 
 Verify that the package installed correctly by looking for the lexer "mdcpp" in the output of
 
-    $ pygmentize -L lexers
+    pygmentize -L lexers
 
 ## Using the lexer in latex
 
 Just use the **mdcpp** "language". In LaTeX this means something like this
 
-    \begin{minted}{mdcpp}
-    vec3 position(0.0, 0.0, 0.0);
-    Atom *atom = new Atom(position);
-    \end{minted}
+``` latex
+\begin{minted}{mdcpp}
+vec3 position(0.0, 0.0, 0.0);
+Atom *atom = new Atom(position);
+\end{minted}
+
+```
+
+You can test it using the [example.ltx](example.ltx) file like so:
+
+    pdflatex -shell-escape example.ltx
 
 See the minted package at https://github.com/gpoore/minted for more information.
