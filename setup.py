@@ -3,16 +3,16 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='pygments-mdcpp',
-    description='Pygments lexer for object-oriented molecular dynamics C++.',
+    name='pygments-custom',
+    description='Extending the Pygments lexer with custom keywords.',
     long_description=open('README.md').read(),
-    keywords='pygments molecular-dynamics cpp c++ lexer',
+    keywords='pygments lexer keyword typedef',
 
     packages=find_packages(),
     install_requires=['pygments >= 1.4'],
 
     entry_points='''[pygments.lexers]
-                    mdcpp=pygments_mdcpp:MDCppLexer''',
+                    custom=pygments_custom:CustomLexer''',
 
     classifiers=[
         'Development Status :: 4 - Beta',
