@@ -1,0 +1,18 @@
+\documentclass{book}
+\usepackage{minted}
+
+\begin{document}
+
+\section{Before}
+\begin{minted}{cpp}
+vec3 position(0.0, 0.0, 0.0);
+Atom *atom = Atom(position);
+\end{minted}
+
+\section{After}
+\begin{minted}{mdcpp}
+vec3 position(0.0, 0.0, 0.0);
+Atom *atom = Atom(position);
+\end{minted}
+
+\end{document}
