@@ -30,7 +30,7 @@ class CustomLexer(CLexer):
 if __name__ == '__main__':
     print( "testing" )
     x = CustomLexer()
-    for y in x.get_tokens_unprocessed( "foo bar baz quux fred juki" ):
+    for y in x.get_tokens_unprocessed( "M_PI", "hello_my_name is", "psudo", "removed",  "reserved", Type ):
         print(y)
     for y in x.get_tokens_unprocessed( "vec3 x,y,z; System;" ):
         print(y)
