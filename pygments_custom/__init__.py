@@ -1,9 +1,9 @@
 from pygments.lexers.compiled import CppLexer
 from pygments.token import Name, Keyword
 
-class MDCppLexer(CppLexer):
-    name = 'MDCpp'
-    aliases = ['mdcpp']
+class CustomLexer(CppLexer):
+    name = 'Custom'
+    aliases = ['custom']
 
     EXTRA_TYPES = ['Atom', 'System', 'vec3']
 
