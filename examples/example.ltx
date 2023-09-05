@@ -1,24 +1,35 @@
 \documentclass{book}
 \usepackage{minted}
+\usepackage[compatibility=false]{caption}
+
+%% Certain styles do not differentiate between keyword subtypes.
+% style=algol: distinguishes Keyword.Declaration.
+\setminted{style=default, linenos=true, frame=single,
+  framesep=2mm, xleftmargin=2cm, xrightmargin=2cm}
 
 \begin{document}
 
-\section{Before}
-\begin{minted}{cpp}
-vec3 position(0.0, 0.0, 0.0);
-Atom *atom = Atom(position);
-foo bar baz quux;
-fred juki;
-System asdf;
-\end{minted}
+\begin{figure}[!h]
+  \begin{minipage}{1\textwidth}
+    \inputminted{C}{example.c}
+    \captionof{listing}{Default C lexer}
+  \end{minipage}
+  \begin{minipage}{1\textwidth}
+    \inputminted{custom}{example.c}
+    \captionof{listing}{Using custom lexer keywords}
+  \end{minipage}
+  \captionof{listing}{SomeCaption}
+  \label{lst:representation_examples}
+\end{figure}
 
-\section{After}
-\begin{minted}{custom}
-vec3 position(0.0, 0.0, 0.0);
-Atom *atom = Atom(position);
-foo bar baz quux;
-fred juki;
-System asdf;
-\end{minted}
+
+
+\begin{listing}[H]
+  \inputminted{C}{example.c}
+  \inputminted{custom}{example.c}
+  \caption{SomeCaption}
+  \label{lst:representation_examples}
+\end{listing}
+
 
 \end{document}
