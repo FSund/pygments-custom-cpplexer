@@ -1,6 +1,4 @@
 int main(int argc, char *argv[]) {
-    uint64_t register x;
-    time_t tm;
     const double Tau = M_PI * 2;
     System header {
         vec3 p = pos(0.0, 0.0, 0.0);
