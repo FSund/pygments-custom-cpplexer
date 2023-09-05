@@ -5,18 +5,16 @@ class CustomLexer(CLexer):
     name = 'Custom'
     aliases = ['custom']
 
-    EXTRA_TYPES = ['Atom', 'System', 'vec3']
-
     EXTRA = {}
-    EXTRA[Keyword.Constant] = [ 'Phi', 'Tau' ]
-    EXTRA[Keyword.Declaration] = [ 'foo' ]
-    EXTRA[Keyword.Namespace] = [ 'bar' ]
-    EXTRA[Keyword.Pseudo] = [ 'asdf' ]
-    EXTRA[Keyword.Removed] = [ 'fred' ]
-    EXTRA[Keyword.Reserved] = [ 'juki' ]
+    EXTRA[Keyword.Constant] = [ 'M_PI', 'M_E' ]
+    EXTRA[Keyword.Declaration] = [ 'declaration' ]
+    EXTRA[Keyword.Namespace] = [ 'hello_my_name_is' ]
+    EXTRA[Keyword.Pseudo] = [ 'pseudo' ]
+    EXTRA[Keyword.Removed] = [ 'removed' ]
+    EXTRA[Keyword.Reserved] = [ 'reserved' ]
     EXTRA[Keyword.Type] = ['FLAG', 'vec3', 'Atom', 'System' ]
 
-    EXTRA[Keyword] = [ 'quux', 'plugh' ]
+    EXTRA[Keyword] = [ 'xyzzy', 'plugh' ]
 
     
     def get_tokens_unprocessed(self, text, stack=('root',)):
