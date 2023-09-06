@@ -3,7 +3,7 @@
 A custom lexer for [Pygments](http://pygments.org/) for extra keyword
 highlighting when using the [minted](https://github.com/gpoore/minted)
 package in LaTeX. This was inspired by [FSund's Molecular
-Dynamics]{https://github.com/FSund/pygments-custom-cpplexer.git}.
+Dynamics](https://github.com/FSund/pygments-custom-cpplexer.git) extension.
 
 ## Example output
 
@@ -24,7 +24,8 @@ As of 2023, pygments uses:
 * `Keyword.Reserved`
 * `Keyword` (a generic Keyword token)
 
-By default, it inherits from the C Lexer, but that is easily changed.
+By default, the CustomLexer inherits Keywords from the C Lexer, but
+that is easily changed.
 
 ## Customization
 
