@@ -73,3 +73,23 @@ You can test it using the [example.ltx](example.ltx) file like so:
     pdflatex -shell-escape example.ltx
 
 See the minted package at https://github.com/gpoore/minted for more information.
+
+## Problems
+
+* If after changing the __init__.py and reinstalling the module, it
+  doesn't seem to have an effect in latex, try removing the
+  `_minted-filename` directory which caches the pygments lexer.
+
+  If you will be editing the lexer often, you may wish to disable the
+  cache completely like so:
+  
+  ```latex
+  \usepackage[cache=false]{minted}
+  ```
+  
+* Different Keyword subtypes may not look different depending on the
+  inherited lexer and the style chosen. When subclassing from CLexer
+  and using the default style, Keyword.Constant, Keyword.Declaration,
+  Keyword.Namespace, Keyword.Pseudo, and Keyword.Reserved all look the
+  same as a generic Keyword.
+
