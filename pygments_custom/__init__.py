@@ -33,6 +33,7 @@ class CustomLexer(mysuper):
                 for key in self.EXTRA:
                     if value in self.EXTRA[key]:
                         token=key
+                        break
 
             yield index, token, value
 
