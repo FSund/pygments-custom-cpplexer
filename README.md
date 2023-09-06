@@ -5,6 +5,12 @@ highlighting when using the [minted](https://github.com/gpoore/minted)
 package in LaTeX. This was inspired by [FSund's Molecular
 Dynamics]{https://github.com/FSund/pygments-custom-cpplexer.git}.
 
+## Example output
+
+[examples/example.pdf](examples/example.pdf)
+
+## Capabilities
+
 You can define any identifier (e.g., `vec3`) to be any of the subtypes
 of `Keyword` that pygments recognizes (or, in fact, any token at all).
 As of 2023, pygments uses:
