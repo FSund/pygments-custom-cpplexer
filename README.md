@@ -22,7 +22,13 @@ By default, it inherits from the C Lexer, but that is easily changed.
 
 ## Customization
 
-Edit the file [pygments_custom/__init.py__](pygments_custom/__init.py__).
+Edit the file [pygments_custom/__init.py__](pygments_custom/__init.py__)
+and simply list the keywords in the array you'd like. For example:
+
+``` python
+EXTRA[Keyword.Type] = ['FLAG', 'vec3', 'Atom' ]
+EXTRA[Keyword.Constant] = [ 'M_PI', 'Tau' ]
+```
 
 ### Changing the super class
 
@@ -39,7 +45,7 @@ from pygments.lexers.compiled import CppLexer as mysuper
 
 ## Install
 
-    git clone 
+    git clone https://github.com/hackerb9/pygments-custom
     cd pygments-custom
     (sudo) python setup.py install
 
