@@ -41,8 +41,8 @@ class CustomLexer(mysuper):
 if __name__ == '__main__':
     print( "testing" )
     x = CustomLexer()
-    for y in x.get_tokens_unprocessed( "M_PI", "hello_my_name is", "pseudo", "removed",  "reserved", Type ):
+    for y in x.get_tokens_unprocessed( "M_PI", "hello_my_name is", "removed" ):
         print(y)
-    for y in x.get_tokens_unprocessed( "vec3 x,y,z; System;" ):
+    for y in x.get_tokens_unprocessed( "vec3 x,y,z; System;", "reserved", Type):
         print(y)
         
