@@ -1,5 +1,7 @@
 \documentclass{article}
 \usepackage[cache=false]{minted}
+\usepackage[strict]{changepage}
+
 \begin{document}
 \setminted{linenos=true, frame=single}
 
@@ -11,5 +13,10 @@
 
 \section{Latex example}
 \inputminted[curlyquotes]{tex}{example.ltx}
+
+\clearpage\setminted{linenos=false, frame=none}
+\changepage{4\baselineskip}{}{-2cm}{-2cm}{}{-2cm}{}{}{}
+\section{Custom keyword code}
+\inputminted{python}{../pygments_custom/__init__.py}
 
 \end{document}
