@@ -18,6 +18,6 @@ all: example.pdf
 
 .PHONY: clean
 clean:
-	rm -rf example.aux example.log _minted-example *~
+	rm -rf *.aux *.log *.out.pyg  _minted-* *~
 
 
