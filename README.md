@@ -9,6 +9,8 @@ Dynamics](https://github.com/FSund/pygments-custom-cpplexer.git) extension.
 
 [![Custom Keyword example][screenshot]](examples/example.pdf)
 
+See the full [example.pdf](examples/example.pdf).
+
 [screenshot]: README.md.d/2custom.png "Click to see full PDF"
 
 ## Capabilities
