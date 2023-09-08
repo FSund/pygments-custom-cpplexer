@@ -60,8 +60,9 @@ class CustomLexer(mysuper):
 
     for v, k in kwtable:
         s = getenv( v )
+        print(v, s)
         if s:
-            EXTRA[k] = json.loads(s.replace("'", '"'))
+            EXTRA[k] = json.loads(s.replace("'", '"').replace("[]", '{}', EXTRA[k]))
     
     def get_tokens_unprocessed(self, text, stack=('root',)):
         for index, token, value in mysuper.get_tokens_unprocessed(self, text, stack):
