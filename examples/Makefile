@@ -1,9 +1,14 @@
 all: example.pdf
 
-# Environment variables to add syntax highlighting
-#PYGMENTS_CUSTOM_TYPE = '[ "vec3", "Atom", "System" ]'
-export PYGMENTS_CUSTOM_CONSTANT="[ 'M_PI', 'Tau' ]"
-#export PYGMENTS_CUSTOM_KEYWORD="[ 'xyzzy', 'plugh' ]"
+# Environment variables to add syntax highlighting. Use Python list syntax.
+export PYGMENTS_CUSTOM_TYPE 		:= [ "vec3", "Atom", "System" ]
+export PYGMENTS_CUSTOM_CONSTANT 	:= [ 'M_PI', 'Tau' ]
+export PYGMENTS_CUSTOM_KEYWORD 		:= [ 'xyzzy', 'plugh' ]
+export PYGMENTS_CUSTOM_DECLARATION 	:= [ 'declaration' ]
+export PYGMENTS_CUSTOM_NAMESPACE	:= [ 'hello_my_name_is' ]
+export PYGMENTS_CUSTOM_PSEUDO 		:= [ 'pseudo' ]
+export PYGMENTS_CUSTOM_RESERVED 	:= [ 'reserved' ]
+export PYGMENTS_CUSTOM_REMOVED 		:= [ 'removed' ]
 
 
 # Pattern rule for building the pdf from latex and C source files.
