@@ -31,7 +31,7 @@ class CustomLexer(mysuper):
     changed by the environment variable PYGMENTS_CUSTOM_BASE_LEXER.
     For example, one could inherit the C++ Lexer's keywords like so:
 
-    	PYGMENTS_CUSTOM_BASE_LEXER="CppLexer"
+    	export PYGMENTS_CUSTOM_BASE_LEXER="CppLexer"
 
     New keywords can be highlighted as Type, Constant, Namespace,
     Declaration, Pseudo, Removed, Reserved, or plain old Keyword. To
@@ -39,10 +39,10 @@ class CustomLexer(mysuper):
     PYGMENTS_CUSTOM_CONSTANT, ..., PYGMENTS_CUSTOM_KEYWORD.
 
     Each variable is a Python list (square brackets surrounding a
-    comma separated list of quoted strings). For example, this adds
-    new types (class, typedef) for highlighting:
+    comma separated list of quoted strings). For example, this
+    highlights new types (e.g., classes or typedefs):
 
-    	PYGMENTS_CUSTOM_TYPE="[ 'vec3', 'Atom', 'System' ]"
+    	export PYGMENTS_CUSTOM_TYPE="[ 'vec3', 'Atom', 'System' ]"
 
     """
 
@@ -58,14 +58,18 @@ class CustomLexer(mysuper):
                 ('PYGMENTS_CUSTOM_KEYWORD',     Keyword),               ]
     EXTRA = {}
 
+    tr = str.maketrans( "'", '"' ) 	# transliterate python to JSON strings.
     for v, k in kwtable:
         s = getenv( v )
-        print(v, s)
         if s:
-            EXTRA[k] = json.loads(s.replace("'", '"').replace("[]", '{}', EXTRA[k]))
+            s = s.translate(tr)
+            try:
+                EXTRA[k] = json.loads( s )
+            except Exception as e:
+                print( "\n*** Error", e, f"Could not parse: {s}", file=stderr )
     
-    def get_tokens_unprocessed(self, text, stack=('root',)):
-        for index, token, value in mysuper.get_tokens_unprocessed(self, text, stack):
+    def get_tokens_unprocessed(self, *args):
+        for index, token, value in mysuper.get_tokens_unprocessed(self, *args):
             if token is Name:
                 for key in self.EXTRA:
                     if self.EXTRA[key] and value in self.EXTRA[key]:
