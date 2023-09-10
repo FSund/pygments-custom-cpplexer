@@ -66,10 +66,11 @@ class CustomLexer(mysuper):
             try:
                 EXTRA[k] = json.loads( s )
             except Exception as e:
-                print( "\n*** Error", e, f"Could not parse: {s}", file=stderr )
+                print(  f'\n*** Could not parse: {s}', 
+                         '\n*** Error:', e, file=stderr)
     
-    def get_tokens_unprocessed(self, *args):
-        for index, token, value in mysuper.get_tokens_unprocessed(self, *args):
+    def get_tokens_unprocessed( self, text, stack=('root',) ):
+        for index, token, value in mysuper.get_tokens_unprocessed(self, text, stack):
             if token is Name:
                 for key in self.EXTRA:
                     if self.EXTRA[key] and value in self.EXTRA[key]:
