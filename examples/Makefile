@@ -1,13 +1,16 @@
 all: example.pdf
 
-# Environment variables to add syntax highlighting. Use Python list syntax.
+# The Pygments Custom language module uses Environment Variables to
+# add keywords for syntax highlighting. All are optional.
+# Note that this maps strings to subtypes of Token.Keyword.
+
 export PYGMENTS_CUSTOM_TYPE 		:= [ "vec3", "Atom", "System" ]
 export PYGMENTS_CUSTOM_CONSTANT 	:= [ 'M_PI', 'Tau' ]
 export PYGMENTS_CUSTOM_KEYWORD 		:= [ 'xyzzy', 'plugh' ]
-export PYGMENTS_CUSTOM_DECLARATION 	:= [ 'declaration' ]
-export PYGMENTS_CUSTOM_NAMESPACE	:= [ 'hello_my_name_is' ]
-export PYGMENTS_CUSTOM_PSEUDO 		:= [ 'pseudo' ]
-export PYGMENTS_CUSTOM_RESERVED 	:= [ 'reserved' ]
+export PYGMENTS_CUSTOM_DECLARATION 	:= [ 'def', 'fn' ]
+export PYGMENTS_CUSTOM_NAMESPACE	:= [ 'using', 'hello_my_name_is' ]
+export PYGMENTS_CUSTOM_PSEUDO 		:= [ 'let' ]
+export PYGMENTS_CUSTOM_RESERVED 	:= [ 'POKE' ]
 export PYGMENTS_CUSTOM_REMOVED 		:= [ 'removed' ]
 
 
