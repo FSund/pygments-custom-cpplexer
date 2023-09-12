@@ -14,9 +14,11 @@ extension.
 
 <ul>
 
-<pre><code>export PYGMENTS_CUSTOM_TYPE="[ 'vec3', 'Atom', 'System' ]"
-pygmentize -l custom [examples/example.c](examples/example.c)
-pdflatex [example.ltx](examples/example.ltx)</code></pre>
+`export PYGMENTS_CUSTOM_TYPE="[ 'vec3', 'Atom', 'System' ]"`
+
+`pygmentize -l custom `[`examples/example.c`](examples/example.c)
+
+`pdflatex `[`example.ltx`](examples/example.ltx)
 
 </ul>
 
