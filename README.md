@@ -142,8 +142,6 @@ To emphasize certain subtypes, one can use a different style
 (`\setminted{style=tango}`). For example, the "algol" style makes
 namespaces distinct from other keywords by italicizing them.
 
-
-
 Some of the styles presume a dark background but rely on the user to
 set it, like so: `\setminted{style=github-dark, bgcolor=darkgray}`
 
@@ -168,15 +166,13 @@ set it, like so: `\setminted{style=github-dark, bgcolor=darkgray}`
 
 </details>
 
-## Use without installing.
+## Use without installing?
 
 Some pygments tools, such as the command-line interface `pygmentize`,
 may be able to use this CustomLexer module without having to install
 it first. **Untested**:
 
-``` bash
-pygmentize -x -l ./pygments-custom/__init.py__
-```
+    pygmentize -x -l ./pygments-custom/__init.py__
 
 
 ## Debugging
