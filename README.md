@@ -16,7 +16,7 @@ extension.
 
 `export PYGMENTS_CUSTOM_TYPE="[ 'vec3', 'Atom', 'System' ]"`
 
-`pygmentize -l custom `[`examples/example.c1`](examples/example.c)
+`pygmentize -l custom `[`examples/example.c`](examples/example.c)
 
 `pdflatex `[`example.ltx`](examples/example.ltx)
 
@@ -172,8 +172,9 @@ set it, like so: `\setminted{style=github-dark, bgcolor=darkgray}`
 
 ## Use without installing.
 
-Some pygments tools, may be able to use this CustomLexer module
-without having to install it first. Untested:
+Some pygments tools, such as the command-line interface `pygmentize`,
+may be able to use this CustomLexer module without having to install
+it first. **Untested**:
 
 ``` bash
 pygmentize -x -l ./pygments-custom/__init.py__
