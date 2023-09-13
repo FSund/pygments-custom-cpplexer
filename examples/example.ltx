@@ -1,0 +1,26 @@
+\documentclass{article}
+\usepackage[cache=false]{minted}
+\usepackage[strict]{changepage}
+
+\begin{document}
+\setminted{linenos=true, frame=single}
+
+\section{Default minted ``C++'' lexer}
+\inputminted{Cpp}{example.cpp}
+
+\section{Custom Molecular Dynamics lexer}
+\inputminted{custom}{example.cpp}
+
+\clearpage\section{Makefile}
+\setminted{linenos=false, frame=lines}
+\inputminted{Makefile}{Makefile}
+
+\clearpage\section{Latex example}
+\inputminted[curlyquotes]{tex}{example.ltx}
+
+\clearpage\setminted{linenos=false, frame=lines}
+\changepage{4\baselineskip}{4cm}{-2cm}{-2cm}{}{-2cm}{}{}{}
+\section{Custom keyword code}
+\inputminted{python}{../pygments_custom/__init__.py}
+
+\end{document}
