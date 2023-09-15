@@ -8,16 +8,16 @@ export PYGMENTS_CUSTOM_TYPE="[ 'vec3', 'Atom', 'System' ]"
 export PYGMENTS_CUSTOM_CONSTANT="[ 'M_PI', 'Tau'  ]"
 export PYGMENTS_CUSTOM_KEYWORD="[ 'xyzzy', 'plugh'  ]"
 export PYGMENTS_CUSTOM_DECLARATION="[ 'def', 'fn' ]"
-export PYGMENTS_CUSTOM_NAMESPACE="[ 'using', 'hello_my_name_is' ]"
+export PYGMENTS_CUSTOM_NAMESPACE="[ 'hello_my_name_is' ]"
 export PYGMENTS_CUSTOM_PSEUDO="[ 'let' ]"
 export PYGMENTS_CUSTOM_RESERVED="[ 'POKE' ]"
 export PYGMENTS_CUSTOM_REMOVED="[ 'removed' ]"
 
 
-input="new vec3 M_PI xyzzy def using let POKE removed"
+input="new vec3 M_PI xyzzy def hello_my_name_is let POKE removed"
 
 expected="    def testNeedsName(lexer):
-        fragment = 'new vec3 M_PI xyzzy def using let POKE removed\n'
+        fragment = 'new vec3 M_PI xyzzy def hello_my_name_is let POKE removed\n'
         tokens = [
             (Token.Keyword, 'new'),
             (Token.Text.Whitespace, ' '),
@@ -29,7 +29,7 @@ expected="    def testNeedsName(lexer):
             (Token.Text.Whitespace, ' '),
             (Token.Keyword.Declaration, 'def'),
             (Token.Text.Whitespace, ' '),
-            (Token.Keyword, 'using'),
+            (Token.Keyword.Namespace, 'hello_my_name_is'),
             (Token.Text.Whitespace, ' '),
             (Token.Keyword.Pseudo, 'let'),
             (Token.Text.Whitespace, ' '),
